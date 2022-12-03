@@ -48,4 +48,11 @@ function playRound(playerSel){
     }
 }
 
-console.log(playRound('scissors'));
+function game(){
+    for(let i = 0; i < 5; i++){
+        let playerSelection = prompt("Please choose: 'Rock', 'Paper', 'Scissors': " );
+        console.log(playRound(playerSelection));
+    }
+}
+
+console.log(game());
