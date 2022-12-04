@@ -14,6 +14,7 @@ for(let i = 0; i < btnChoices.length; i++){
     btnChoices[i].addEventListener('click', function (){
         playerSelection = this.innerHTML;
         resultsDisplay.innerHTML = playRound(playerSelection);
+        
     });
 }
 
@@ -83,4 +84,4 @@ function playRound(playerSel){
 //     }
 // }
 
-// console.log(game());
+
