@@ -3,6 +3,7 @@
 // Add event listener to buttons and call playRound everytime button is clicked
 let btnChoices = document.querySelectorAll(".choice-btns");
 let resultsDisplay = document.querySelector(".results");
+let displayWinner = document.querySelector(".winner");
 
 let playerScore = 0;
 let aiScore = 0;
@@ -14,7 +15,25 @@ for(let i = 0; i < btnChoices.length; i++){
     btnChoices[i].addEventListener('click', function (){
         playerSelection = this.innerHTML;
         resultsDisplay.innerHTML = playRound(playerSelection);
+        if(i == 0){
+            displayWinner.innerHTML = "";
+        }
         
+        if(playerScore == 5){
+            displayWinner.innerHTML = `Player Wins! ${playerScore} - ${aiScore}`;
+            playerScore = 0;
+            aiScore = 0;
+            playerScoreElement.innerHTML = playerScore;
+            aiScoreElement.innerHTML = aiScore;
+        }
+
+        else if(aiScore == 5){
+            displayWinner.innerHTML = `The Computer Wins! ${aiScore} - ${playerScore}`;
+            aiScore = 0;
+            playerScore = 0;
+            playerScoreElement.innerHTML = playerScore;
+            aiScoreElement.innerHTML = aiScore;
+        }
     });
 }
 
@@ -76,12 +95,3 @@ function playRound(playerSel){
         return `You Lose! ${computerChoice} beats ${playerChoice}`;
     }
 }
-
-// function game(){
-//     for(let i = 0; i < 5; i++){
-//         let playerSelection = prompt("Please choose: 'Rock', 'Paper', 'Scissors': " );
-//         console.log(playRound(playerSelection));
-//     }
-// }
-
-

@@ -63,3 +63,13 @@ button:hover {
 button:not(:last-child) {
     margin-right: 1rem;
 }
+
+.results {
+    margin: 1rem 0;
+    font-size: 1.6rem;
+}
+
+.winner {
+    /* margin-top: -500px; */
+    font-size: 4rem;
+}
